@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-109046767-2');
+		</script>
+		<link rel="icon" type="image/png" href="demos/onglet.png" />
+
+		<!-- CHANGE HERE -->
+		<title>VQ-MAE-AudioVisual</title>
+		<!-- ----------- -->
+		<script src="https://cdn.jsdelivr.net/npm/before-after-slider@1.0.0/dist/slider.bundle.js"></script>
+
+
+		<script
+		  defer
+		  src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
+		></script>
+		<link
+		  rel="stylesheet"
+		  href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
+		/>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600|Source+Code+Pro" rel="stylesheet" />
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+		<!-- The loading of KaTeX is deferred to speed up page rendering -->
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+		<!-- To automatically render math in text elements, include the auto-render extension: -->
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js" integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+		<script src="js/skel.min.js">
+		{
+			prefix: 'css/style',
+			preloadStyleSheets: true,
+			resetCSS: true,
+			boxModel: 'border',
+			grid: { gutters: 30 },
+			breakpoints: {
+				wide: { range: '1200-', containers: 1140, grid: { gutters: 50 } },
+				narrow: { range: '481-1199', containers: 960 },
+				mobile: { range: '-480', containers: 'fluid', lockViewport: true, grid: { collapse: true } }
+			}
+		}
+		</script>
+
+		<style>
+			table tr th, table tr td {
+			text-align: center;
+			vertical-align: middle;
+			border: 0px solid white;
+			border-collapse: collapse;
+			}
+		</style>
+
+		<style type="text/css">a {text-decoration: none}</style>
+
+	</head>
+
+	<body>
+
+		<div id="site_content">
+		<div class="container">
+
+		<!-- Features -->
+		<div class="row">
+			<section class="12u">
+
+				<h2 style="text-align: center;">
+					A vector quantized masked autoencoder for speech audiovisual representation learning
+				</h2>
+
+				<p style="text-align: center;">
+					Samir Sadok<sup>1</sup>&emsp;&emsp; Simon Leglaive<sup>1</sup> &emsp; Renaud Séguier<sup>1</sup>&emsp;&emsp;
+				</p>
+
+				<p style="text-align: center; line-height: 100%;">
+					<sup>1</sup>CentraleSupélec, IETR UMR CNRS 6164, France &emsp;&emsp; <br>
+				</p>
+				<!--
+				<p style="text-align: center;">
+					Inproceedings
+				</p> 
+				-->
+
+				<p style="text-align: center;">
+					 <a href="https://arxiv.org/MDVAE" target="_blank" rel="noopener">Article</a> |
+					<!-- <a href="#audio">Audio examples</a> |  -->
+<!--					 <a href="documents/presentation_icassp2020.pdf">Slides</a> |  -->
+					<a href="https://github.com/samsad35/VQ-MAE-Speech-code" target="_blank" rel="noopener">Code</a>
+					<!-- <a href="https://hal.archives-ouvertes.fr/hal-03603791v1/bibtex" target="_blank" rel="noopener">Bibtex</a> | -->
+					<!-- <a href="#acknowledgement">Acknowledgement</a> -->
+				</p>
+
+				<!-- Abstract -->
+				<strong><span style="font-size: large;"><a name="abstract"></a>Abstract</span></strong>
+				<hr>
+				
+				<div style="width:100%; text-align: center">
+					<table>
+						<td>
+							<img src="demos/MDVAE/overview.svg" alt="VQ-SMAE"  width="1100" />
+						</td>
+					</table>
+				</div>
+				<p style = "text-align: justify; vertical-align: top;"> Recent years have seen remarkable progress in speech emotion recognition (SER), thanks to advances in deep learning techniques. However, the limited availability of labeled data remains a significant challenge in the field. Self-supervised learning has recently emerged as a promising solution to address this challenge. In this paper, we propose the vector quantized masked autoencoder for speech (VQ-MAE-S), a self-supervised model that is fine-tuned to recognize emotions from speech signals. The VQ-MAE-S model is based on a masked autoencoder (MAE) that operates in the discrete latent space of a vector quantized variational autoencoder. Experimental results show that the proposed VQ-MAE-S model, pre-trained on the VoxCeleb2 dataset and fine-tuned on emotional speech data, outperforms existing MAE methods that rely on speech spectrogram representations as input.</p>
+
+			<!-- VISUALISATION OF THE LEARNED LATENT SUBSPACES -->
+			<span style="font-size: large;"><a name="latentspace"></a><strong>Qualitative Results</strong></span>
+			<hr>
+			
+			<br>
+				<div style="width:100%; text-align: center; border: 0px dashed Red;">
+<!--					<span style="font-size: medium; color:Red;"><a name="Visual"></a><strong><font size="+2">RATIO 50%</font></strong></span>-->
+
+					<table style="width:100%; text-align: center;">
+						<td>
+							<p> <font size="+2">Original</font> </p>
+							<div class="zoom">
+								<img id="img_original" src="demos/96/id_1/images-original_ratio-0.0.svg" alt="z_v"  width="350" />
+							</div>
+						</td>
+
+						<td>
+							<p> <font size="+2">Masked</font> </p>
+							<div class="zoom">
+								<img id="img_masked" src="demos/96/id_1/images-masked_ratio-50.0.svg" alt="z_v"  width="350" />
+							</div>
+						</td>
+
+
+						<td>
+							<p> <font size="+2">VQ-MAE-AV-12</font> </p>
+							<div class="zoom">
+								<img id="img_reconstructed" src="demos/96/id_1/images-reconstructed_ratio-50.0.svg" alt="z_v"  width="350" />
+							</div>
+						</td>
+					</table>
+
+					<table style="width:100%; text-align: center;">
+						<td>
+							<video id="video_original" style="display: None;" controls autoplay  muted loop preload="auto" width="200">
+							  	<source  src="demos/96/id_1/images-original_ratio-0.0.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							</video>
+						</td>
+
+						<td>
+							<video id="video_masked" style="display: None;" controls autoplay  muted loop preload="auto" width="200">
+							  <source  src="demos/96/id_1/images-masked_ratio-50.0.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							</video>
+						</td>
+
+
+						<td>
+							<video id="video_reconstructed" style="display: None;" controls autoplay  muted loop preload="auto" width="200">
+							  <source  src="demos/96/id_1/images-reconstructed_ratio-50.0.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							</video>
+						</td>
+					</table>
+
+					<center>
+						<div>
+							<label  style="margin-left: 3em" > Resolution: </label>
+							<select name="pets" id="resolution_" style="margin-right: 5em" onclick="selectAnimation()">
+								<option value="96">96</option>
+								<option value="192">192</option>
+
+							</select>
+							<label class="switch switch-flat"> Animation
+								<input id="animation" type="checkbox" onclick="checkAnimation()"/>
+							</label>
+							<label  style="margin-left: 3em" > ID: </label>
+							<select name="pets" id="id_" style="margin-right: 5em" onclick="selectAnimation()">
+								<option value="1">id_1</option>
+								<option value="2">id_2</option>
+								<option value="3">id_3</option>
+								<option value="4">id_4</option>
+							</select>
+							<b id="number" style="color:#5E77E7;font-size: 20px;opacity: 0.7;">(Ratio audio) 50 %</b>
+						  	<input type="range" id="ratio" value="50" name="volume" min="0" max="100" step="10" oninput="rangeValue.innerText = this.value">
+							<label id="rangeValue" style="color:#5E77E7;font-size: 20px;opacity: 0.7;">50</label> <label for="ratio" style="color:#5E77E7;font-size: 20px;opacity: 0.7;"> % (Ratio visual)</label>
+						</div>
+					</center>
+
+
+					<table style="width:100%; text-align: center;">
+						<td>
+							<audio id="wav_original" style="width: 200px" controls="controls" preload="none" src="demos/96/id_1/spectrogram-original_ratio-0.0.wav"></audio>
+							<div class="zoom">
+								<img id="aud_original" src="demos/96/id_1/spectrogram-original_ratio-0.0.svg" alt="z_v"  width="300" />
+							</div>
+						</td>
+
+						<td>
+							<audio id="wav_masked" style="width: 200px" controls="controls" preload="none" src="demos/96/id_1/spectrogram-masked_ratio-50.0.wav"></audio>
+							<div class="zoom">
+								<img id="aud_masked" src="demos/96/id_1/spectrogram-masked_ratio-50.0.svg" alt="z_v"  width="300" />
+							</div>
+						</td>
+
+						<td>
+							<audio id="wav_reconstructed" style="width: 200px" controls="controls" preload="none" src="demos/96/id_1/spectrogram-reconstructed_ratio-50.0.wav"></audio>
+							<div class="zoom">
+								<img id="aud_reconstructed" src="demos/96/id_1/spectrogram-reconstructed_ratio-50.0.svg" alt="z_v"  width="300" />
+							</div>
+						</td>
+					</table>
+				</div>
+			<br>
+
+				<script>
+				function selectAnimation()
+				{
+					var x = document.getElementById("ratio").value;
+					var e = document.getElementById("id_").value;
+					var r = document.getElementById("resolution_").value;
+
+				  document.getElementById('img_original').src="demos/"+r+"/id_"+e+"/images-original_ratio-0.0.svg"
+				  document.getElementById('img_masked').src="demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.svg"
+				  document.getElementById('img_reconstructed').src="demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.svg"
+
+				  document.getElementById('video_original').setAttribute("src", "demos/"+r+"/id_"+e+"/images-original_ratio-0.0.mp4")
+				  document.getElementById('video_masked').setAttribute("src", "demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.mp4")
+				  document.getElementById('video_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.mp4")
+
+				  document.getElementById('aud_original').src="demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.svg"
+				  document.getElementById('aud_masked').src="demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.svg"
+				  document.getElementById('aud_reconstructed').src="demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.svg"
+
+				  document.getElementById('wav_original').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.wav")
+				  document.getElementById('wav_masked').setAttribute("src","demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.wav")
+				  document.getElementById('wav_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.wav")
+				}
+
+				function checkAnimation()
+				{
+				  var checkbox = document.getElementById('animation');
+				  if (checkbox.checked != true)
+				  {
+					document.getElementById("video_original").style.display="none";
+					document.getElementById("video_masked").style.display="none";
+					document.getElementById("video_reconstructed").style.display="none";
+				  }else {
+    				document.getElementById("video_original").style.display="inline";
+					document.getElementById("video_masked").style.display="inline";
+					document.getElementById("video_reconstructed").style.display="inline";
+  					}
+				}
+				const input = document.querySelector("#ratio")
+				input.addEventListener("input", (event) => {
+					number = document.getElementById("number");
+
+					var x = document.getElementById("ratio").value;
+					var e = document.getElementById("id_").value;
+					var r = document.getElementById("resolution_").value;
+					number.innerHTML = "(Ratio audio) " + (100-x) + " %";
+				  document.getElementById('img_original').src="demos/"+r+"/id_"+e+"/images-original_ratio-0.0.svg"
+				  document.getElementById('img_masked').src="demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.svg"
+				  document.getElementById('img_reconstructed').src="demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.svg"
+
+				  document.getElementById('video_original').setAttribute("src", "demos/"+r+"/id_"+e+"/images-original_ratio-0.0.mp4")
+				  document.getElementById('video_masked').setAttribute("src", "demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.mp4")
+				  document.getElementById('video_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.mp4")
+
+				  document.getElementById('aud_original').src="demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.svg"
+				  document.getElementById('aud_masked').src="demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.svg"
+				  document.getElementById('aud_reconstructed').src="demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.svg"
+
+				  document.getElementById('wav_original').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.wav")
+				  document.getElementById('wav_masked').setAttribute("src","demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.wav")
+				  document.getElementById('wav_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.wav")
+
+				})
+				</script>
+
+				<style>
+					.zoom {
+					  transition: transform .2s;
+					  transform-origin: center;
+					  width: 100%;
+					  height: 100%;
+					  margin: auto auto;
+					}
+
+					.zoom:hover {
+					  -ms-transform: scale(1.5); /* IE 9 */
+					  -webkit-transform: scale(1.5); /* Safari 3-8 */
+					  transform: scale(1.5);
+					  filter: brightness(130%);
+					}
+
+
+				</style>
+
+
+
+
+</body>
+</html>
