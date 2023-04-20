@@ -75,7 +75,7 @@
 			<section class="12u">
 
 				<h2 style="text-align: center;">
-					A vector quantized masked autoencoder for speech audiovisual representation learning
+					A vector quantized masked autoencoder for speech audio-visual representation learning
 				</h2>
 
 <!--				<p style="text-align: center;">-->
@@ -111,11 +111,12 @@
 						</td>
 					</table>
 				</div>
-				<p style = "text-align: justify; vertical-align: top;"> Recent years have seen remarkable progress in speech emotion recognition (SER), thanks to advances in deep learning techniques. However, the limited availability of labeled data remains a significant challenge in the field. Self-supervised learning has recently emerged as a promising solution to address this challenge. In this paper, we propose the vector quantized masked autoencoder for speech (VQ-MAE-S), a self-supervised model that is fine-tuned to recognize emotions from speech signals. The VQ-MAE-S model is based on a masked autoencoder (MAE) that operates in the discrete latent space of a vector quantized variational autoencoder. Experimental results show that the proposed VQ-MAE-S model, pre-trained on the VoxCeleb2 dataset and fine-tuned on emotional speech data, outperforms existing MAE methods that rely on speech spectrogram representations as input.</p>
+				<p style = "text-align: justify; vertical-align: top;"> While audio-visual speech data has been shown to be effective in fully supervised models for emotion detection, the limited availability of labeled data remains a major challenge in this field. To address this issue, self-supervised approaches have gained popularity as potential solutions. In this paper, we propose the vector quantized masked autoencoder for audio-visual speech representation (VQ-MAE-AV), which is an extension of the masked autoencoder (MAE) specifically designed for audio-visual speech input data. Unlike existing multimodal MAEs, our method employs a self-supervised paradigm based on the discrete audio and visual representations learned by two pre-trained VQ-VAEs, which offer several advantages over raw data, including reduced computational cost and improved audio-visual representation learning. We demonstrate that our approach, which is pre-trained on the VoxCeleb2 database and fine-tuned on standard emotional datasets, outperforms supervised multimodal methods for emotion detection.</p>
 
 			<!-- VISUALISATION OF THE LEARNED LATENT SUBSPACES -->
 			<span style="font-size: large;"><a name="latentspace"></a><strong>Qualitative Results</strong></span>
-			<hr>
+			<p>The visualization interface enables users to assess the reconstruction quality of VQ-MAE-AV by controlling various variables such as the ratio of audio or visual masking, the identity, and the resolution. The interface displays the original, masked, and reconstructed spectrograms with their corresponding audio time signals for the audio modality. For the visual modality, the interface shows the original, masked, and reconstructed image sequences. Additionally, users can click on the animation to view the reconstructed video. This feature provides a comprehensive view of the reconstruction quality of VQ-MAE-AV for both audio and visual modalities.</p>
+				<hr>
 			
 			<br>
 				<div style="width:100%; text-align: center; border: 0px dashed Red;">
