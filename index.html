@@ -220,6 +220,52 @@
 				</div>
 			<br>
 
+
+				<br>
+				<hr>
+				<br>
+				<div style="width:100%; text-align: center; border: 0px dashed Red;">
+<!--					<span style="font-size: medium; color:Red;"><a name="Visual"></a><strong><font size="+2">RATIO 50%</font></strong></span>-->
+
+					<table style="width:100%; text-align: center;">
+						<td>
+							<p> <font size="+2">Original</font> </p>
+							<div class="zoom">
+								<img id="img_original-2" src="demos/96.2/id_1/images-original_ratio-90.0.svg" alt="z_v"  width="350" />
+							</div>
+						</td>
+
+						<td>
+							<p> <font size="+2">Masked</font> </p>
+							<div class="zoom">
+								<img id="img_masked-2" src="demos/96.2/id_1/images-masked_ratio-100.0.svg" alt="z_v"  width="350" />
+							</div>
+						</td>
+
+
+						<td>
+							<p> <font size="+2">VQ-MAE-AV-12</font> </p>
+							<div class="zoom">
+								<img id="img_reconstructed-2" src="demos/96.2/id_1/images-reconstructed_ratio-100.0.svg" alt="z_v"  width="350" />
+							</div>
+						</td>
+					</table>
+
+
+					<center>
+						<div>
+							<label  style="margin-left: 3em" > ID: </label>
+							<select name="pets" id="id_2" style="margin-right: 5em" onclick="selectAnimation_2()">
+								<option value="1">id_1</option>
+								<option value="2">id_2</option>
+							</select>
+						  	<input type="range" id="samm" value="100" name="volume" min="90" max="100" step="1" oninput="rangeValu.innerText = this.value">
+							<label id="rangeValu" style="color:#5E77E7;font-size: 20px;opacity: 0.7;">100</label> <label for="samm" style="color:#5E77E7;font-size: 20px;opacity: 0.7;"> % (Ratio masking)</label>
+						</div>
+					</center>
+
+			<br>
+
 				<script>
 				function selectAnimation()
 				{
@@ -260,29 +306,49 @@
 				}
 				const input = document.querySelector("#ratio")
 				input.addEventListener("input", (event) => {
-					number = document.getElementById("number");
+						number = document.getElementById("number");
 
-					var x = document.getElementById("ratio").value;
-					var e = document.getElementById("id_").value;
-					var r = document.getElementById("resolution_").value;
-					number.innerHTML = "(Ratio audio) " + (100-x) + " %";
-				  document.getElementById('img_original').src="demos/"+r+"/id_"+e+"/images-original_ratio-0.0.svg"
-				  document.getElementById('img_masked').src="demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.svg"
-				  document.getElementById('img_reconstructed').src="demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.svg"
+						var x = document.getElementById("ratio").value;
+						var e = document.getElementById("id_").value;
+						var r = document.getElementById("resolution_").value;
+						number.innerHTML = "(Ratio audio) " + (100-x) + " %";
+					  document.getElementById('img_original').src="demos/"+r+"/id_"+e+"/images-original_ratio-0.0.svg"
+					  document.getElementById('img_masked').src="demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.svg"
+					  document.getElementById('img_reconstructed').src="demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.svg"
 
-				  document.getElementById('video_original').setAttribute("src", "demos/"+r+"/id_"+e+"/images-original_ratio-0.0.mp4")
-				  document.getElementById('video_masked').setAttribute("src", "demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.mp4")
-				  document.getElementById('video_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.mp4")
+					  document.getElementById('video_original').setAttribute("src", "demos/"+r+"/id_"+e+"/images-original_ratio-0.0.mp4")
+					  document.getElementById('video_masked').setAttribute("src", "demos/"+r+"/id_"+e+"/images-masked_ratio-"+x+".0.mp4")
+					  document.getElementById('video_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/images-reconstructed_ratio-"+x+".0.mp4")
 
-				  document.getElementById('aud_original').src="demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.svg"
-				  document.getElementById('aud_masked').src="demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.svg"
-				  document.getElementById('aud_reconstructed').src="demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.svg"
+					  document.getElementById('aud_original').src="demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.svg"
+					  document.getElementById('aud_masked').src="demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.svg"
+					  document.getElementById('aud_reconstructed').src="demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.svg"
 
-				  document.getElementById('wav_original').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.wav")
-				  document.getElementById('wav_masked').setAttribute("src","demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.wav")
-				  document.getElementById('wav_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.wav")
+					  document.getElementById('wav_original').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-original_ratio-0.0.wav")
+					  document.getElementById('wav_masked').setAttribute("src","demos/"+r+"/id_"+e+"/spectrogram-masked_ratio-"+x+".0.wav")
+					  document.getElementById('wav_reconstructed').setAttribute("src", "demos/"+r+"/id_"+e+"/spectrogram-reconstructed_ratio-"+x+".0.wav")
 
-				})
+					}
+				)
+
+				const a = document.querySelector("#samm")
+				a.addEventListener("input", (event) => {
+					var x = document.getElementById("samm").value;
+					var e = document.getElementById("id_2").value;
+					document.getElementById('img_original-2').src="demos/96.2/id_"+e+"/images-original_ratio-90.0.svg"
+					document.getElementById('img_masked-2').src="demos/96.2/id_"+e+"/images-masked_ratio-"+x+".0.svg"
+					document.getElementById('img_reconstructed-2').src="demos/96.2/id_"+e+"/images-reconstructed_ratio-"+x+".0.svg"
+					}
+			  	)
+
+			  	function selectAnimation_2()
+				{
+					var x = document.getElementById("samm").value;
+					var e = document.getElementById("id_2").value;
+					document.getElementById('img_original-2').src="demos/96.2/id_"+e+"/images-original_ratio-90.0.svg"
+					document.getElementById('img_masked-2').src="demos/96.2/id_"+e+"/images-masked_ratio-"+x+".0.svg"
+					document.getElementById('img_reconstructed-2').src="demos/96.2/id_"+e+"/images-reconstructed_ratio-"+x+".0.svg"
+				}
 				</script>
 
 				<style>
