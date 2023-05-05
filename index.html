@@ -91,14 +91,14 @@
 				</p> 
 				-->
 
-<!--				<p style="text-align: center;">-->
+				<p style="text-align: center;">
 <!--					 <a href="https://arxiv.org/MDVAE" target="_blank" rel="noopener">Article</a> |-->
-					<!-- <a href="#audio">Audio examples</a> |  -->
-<!--					 <a href="documents/presentation_icassp2020.pdf">Slides</a> |  -->
-<!--					<a href="https://github.com/samsad35/VQ-MAE-Speech-code" target="_blank" rel="noopener">Code</a>-->
-					<!-- <a href="https://hal.archives-ouvertes.fr/hal-03603791v1/bibtex" target="_blank" rel="noopener">Bibtex</a> | -->
-					<!-- <a href="#acknowledgement">Acknowledgement</a> -->
-<!--				</p>-->
+<!--					 <a href="#audio">Audio examples</a> | -->
+<!--					 <a href="documents/presentation_icassp2020.pdf">Slides</a> | -->
+					<a href="" target="_blank" rel="noopener">Code will be made available upon publication of the paper</a>
+<!--					 <a href="https://hal.archives-ouvertes.fr/hal-03603791v1/bibtex" target="_blank" rel="noopener">Bibtex</a> | -->
+<!--					 <a href="#acknowledgement">Acknowledgement</a>-->
+				</p>
 
 				<!-- Abstract -->
 				<strong><span style="font-size: large;"><a name="abstract"></a>Abstract</span></strong>
@@ -111,11 +111,11 @@
 						</td>
 					</table>
 				</div>
-				<p style = "text-align: justify; vertical-align: top;"> While audio-visual speech data has been shown to be effective in fully supervised models for emotion detection, the limited availability of labeled data remains a major challenge in this field. To address this issue, self-supervised approaches have gained popularity as potential solutions. In this paper, we propose the vector quantized masked autoencoder for audio-visual speech representation (VQ-MAE-AV), which is an extension of the masked autoencoder (MAE) specifically designed for audio-visual speech input data. Unlike existing multimodal MAEs, our method employs a self-supervised paradigm based on the discrete audio and visual representations learned by two pre-trained VQ-VAEs, which offer several advantages over raw data, including reduced computational cost and improved audio-visual representation learning. We demonstrate that our approach, which is pre-trained on the VoxCeleb2 database and fine-tuned on standard emotional datasets, outperforms supervised multimodal methods for emotion detection.</p>
+				<p style = "text-align: justify; vertical-align: top;"> While fully-supervised models have been shown to be effective for audiovisual speech emotion recognition (SER), the limited availability of labeled data remains a major challenge in the field. To address this issue, self-supervised learning approaches, such as masked autoencoders (MAEs), have gained popularity as potential solutions. In this paper, we propose the VQ-MAE-AV model, a vector quantized MAE specifically designed for audiovisual speech self-supervised representation learning. Unlike existing multimodal MAEs that rely on the processing of the raw audiovisual speech data, the proposed method employs a self-supervised paradigm based on discrete audio and visual speech representations learned by two pre-trained vector quantized variational autoencoders. Experimental results show that the proposed approach, which is pre-trained on the VoxCeleb2 database and fine-tuned on standard emotional audiovisual speech datasets, outperforms the state-of-the-art audiovisual SER methods.</p>
 
 			<!-- VISUALISATION OF THE LEARNED LATENT SUBSPACES -->
 			<span style="font-size: large;"><a name="latentspace"></a><strong>Qualitative Results</strong></span>
-			<p>The visualization interface enables users to assess the reconstruction quality of VQ-MAE-AV by controlling various variables such as the ratio of audio or visual masking, the identity, and the resolution. The interface displays the original, masked, and reconstructed spectrograms with their corresponding audio time signals for the audio modality. For the visual modality, the interface shows the original, masked, and reconstructed image sequences. Additionally, users can click on the animation to view the reconstructed video. This feature provides a comprehensive view of the reconstruction quality of VQ-MAE-AV for both audio and visual modalities.</p>
+			<p>The visualization interface enables users to assess the reconstruction quality of VQ-MAE-AV by controlling various variables such as the ratio of audio or visual masking, the identity, and the resolution. The interface displays the original, masked, and reconstructed spectrograms with their corresponding audio time signals for the audio modality. For the visual modality, the interface shows the original, masked, and reconstructed image sequences. Additionally, users can click on the animation to view the reconstructed video. This feature provides a comprehensive view of the reconstruction quality of VQ-MAE-AV for both audio and visual modalities.<br> To generate the masked spectrograms or images, we replaced the masked tokens with 0 indices and then used the VQ-VAE decoder to reconstruct the masked spectrograms or images.</p>
 				<hr>
 			
 			<br>
@@ -224,6 +224,7 @@
 				<br>
 				<hr>
 				<br>
+				<p> For the examples below, we have hidden from 90% to 100% of the visual tokens in a non-random manner, starting from the first frame. The more tokens we retain, the more details are visible throughout the entire sequence.</p>
 				<div style="width:100%; text-align: center; border: 0px dashed Red;">
 <!--					<span style="font-size: medium; color:Red;"><a name="Visual"></a><strong><font size="+2">RATIO 50%</font></strong></span>-->
 
