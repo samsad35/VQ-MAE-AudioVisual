@@ -107,11 +107,11 @@
 				<div style="width:100%; text-align: center">
 					<table>
 						<td>
-							<img src="demos/MDVAE/overview-3.svg" alt="VQ-SMAE"  width="1100" />
+							<img src="demos/MDVAE/new_overview.svg" alt="VQ-SMAE"  width="1100" />
 						</td>
 					</table>
 				</div>
-				<p style = "text-align: justify; vertical-align: top;"> While fully-supervised models have been shown to be effective for audiovisual speech emotion recognition (SER), the limited availability of labeled data remains a major challenge in the field. To address this issue, self-supervised learning approaches, such as masked autoencoders (MAEs), have gained popularity as potential solutions. In this paper, we propose the VQ-MAE-AV model, a vector quantized MAE specifically designed for audiovisual speech self-supervised representation learning. Unlike existing multimodal MAEs that rely on the processing of the raw audiovisual speech data, the proposed method employs a self-supervised paradigm based on discrete audio and visual speech representations learned by two pre-trained vector quantized variational autoencoders. Experimental results show that the proposed approach, which is pre-trained on the VoxCeleb2 database and fine-tuned on standard emotional audiovisual speech datasets, outperforms the state-of-the-art audiovisual SER methods.</p>
+				<p style = "text-align: justify; vertical-align: top;"> The limited availability of labeled data is a major challenge in audiovisual speech emotion recognition (SER). Self-supervised learning approaches have recently been proposed to mitigate the need for labeled data in various applications. This paper proposes the VQ-MAE-AV model, a vector quantized masked autoencoder (MAE) designed for audiovisual speech self-supervised representation learning and applied to SER. Unlike previous approaches, the proposed method employs a self-supervised paradigm based on discrete audio and visual speech representations learned by vector quantized variational autoencoders. A multimodal MAE with self- or cross-attention mechanisms is proposed to fuse the audio and visual speech modalities and to learn local and global representations of the audiovisual speech sequence, which are then used for an SER downstream task. Experimental results show that the proposed approach, which is pre-trained on the VoxCeleb2 database and fine-tuned on several standard emotional audiovisual speech datasets, outperforms the state-of-the-art audiovisual SER methods. Extensive ablation experiments are also provided to assess the contribution of the different model components.</p>
 
 			<!-- VISUALISATION OF THE LEARNED LATENT SUBSPACES -->
 			<span style="font-size: large;"><a name="latentspace"></a><strong>Qualitative Results</strong></span>
