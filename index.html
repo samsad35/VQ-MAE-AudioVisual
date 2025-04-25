@@ -74,9 +74,9 @@
 		<div class="row">
 			<section class="12u">
 
-				<h2 style="text-align: center;">
+				<h1 style="text-align: center;">
 					A vector quantized masked autoencoder for audiovisual speech emotion recognition
-				</h2>
+				</h1>
 
 			<p style="text-align: center;">
 				Samir Sadok<sup>1, 2</sup>&emsp;&emsp; Simon Leglaive<sup>1</sup> &emsp; Renaud Séguier<sup>1</sup>&emsp;&emsp;
@@ -113,7 +113,9 @@
 						</td>
 					</table>
 				</div>
-				<p style = "text-align: justify; vertical-align: top;"> The limited availability of labeled data is a major challenge in audiovisual speech emotion recognition (SER). Self-supervised learning approaches have recently been proposed to mitigate the need for labeled data in various applications. This paper proposes the VQ-MAE-AV model, a vector quantized masked autoencoder (MAE) designed for audiovisual speech self-supervised representation learning and applied to SER. Unlike previous approaches, the proposed method employs a self-supervised paradigm based on discrete audio and visual speech representations learned by vector quantized variational autoencoders. A multimodal MAE with self- or cross-attention mechanisms is proposed to fuse the audio and visual speech modalities and to learn local and global representations of the audiovisual speech sequence, which are then used for an SER downstream task. Experimental results show that the proposed approach, which is pre-trained on the VoxCeleb2 database and fine-tuned on several standard emotional audiovisual speech datasets, outperforms the state-of-the-art audiovisual SER methods. Extensive ablation experiments are also provided to assess the contribution of the different model components.</p>
+				<p style = "text-align: justify; vertical-align: top;"> 
+					n important challenge in emotion recognition is to develop methods that can leverage unlabeled training data. In this paper, we propose the VQ-MAE-AV model, a self-supervised multimodal model that leverages masked autoencoders to learn representations of audiovisual speech without labels. The model includes vector quantized variational autoencoders that compress raw audio and visual speech data into discrete tokens. The audiovisual speech tokens are used to train a multimodal masked autoencoder that consists of an encoder–decoder architecture with attention mechanisms. The model is designed to extract both local (i.e., at the frame level) and global (i.e., at the sequence level) representations of audiovisual speech. During self-supervised pre-training, the VQ-MAE-AV model is trained on a large-scale unlabeled dataset of audiovisual speech, for the task of reconstructing randomly masked audiovisual speech tokens and with a contrastive learning strategy. During this pre-training, the encoder learns to extract a representation of audiovisual speech that can be subsequently leveraged for emotion recognition. During the supervised fine-tuning stage, a small classification model is trained on top of the VQ-MAE-AV encoder for an emotion recognition task. The proposed approach achieves state-of-the-art emotion recognition results across several datasets in both controlled and in-the-wild conditions.
+				</p>
 
 			<!-- VISUALISATION OF THE LEARNED LATENT SUBSPACES -->
 			<span style="font-size: large;"><a name="latentspace"></a><strong>Qualitative Results</strong></span>
